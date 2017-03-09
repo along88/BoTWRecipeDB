@@ -54,9 +54,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Commands\ReturnRecipeCmd.cs" />
-    <Compile Include="ViewModel\ReturnRecipeViewModel.cs" />
-    <Page Include="MainWindow.xaml">
+    <Compile Include="ViewModels\Commands\ButtonCommand.cs" />
+    <Compile Include="ViewModels\ObservableCollection.cs" />
+    <Compile Include="ViewModels\ReturnRecipeViewModel.cs" />
+    <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -64,7 +65,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>

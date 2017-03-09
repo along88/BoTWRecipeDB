@@ -5,28 +5,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using RecipeDB.ViewModels;
+
 
 namespace RecipeDB.Models
 {
-    class ReturnRecipeModel : INotifyPropertyChanged
+    public class ReturnRecipeModel : ObservableCollection
     {
         private string recipeName;
-        DataTable recipeList;
-
+        DataView recipeList;
+        
         public string RecipeName
         {
             get => recipeName;
             set
             {
                 recipeName = value;
-                OnPropertyChange(RecipeName);
+                OnPropertyChanged("RecipeName");
             }
         }
-        public DataTable RecipeList
+        public DataView RecipeList
         {
             get
             {
-                return recipeList;
+
+                DataSet recipeData = new DataSet();
+                    recipeData.Tables.Add("Recipes");
+                    recipeData.Tables[0].Columns.Add("Recipe");
+                    recipeData.Tables[0].Columns.Add("Type");
+
+
+                DataRow dr = recipeData.Tables[0].NewRow();
+                dr["Recipe"] = recipeName;
+
+                recipeData.Tables[0].Rows.Add(dr);
+                return recipeData.Tables[0].DefaultView;
             }
             set
             {
@@ -35,16 +48,11 @@ namespace RecipeDB.Models
                 
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        public event EventHandler<EventArgs> OnRequest;
-
-        private void OnPropertyChange(string propertyName)
+        public ReturnRecipeModel()
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if(handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
+            recipeName = "Baked Apple";
         }
+
+       
     }
 }
