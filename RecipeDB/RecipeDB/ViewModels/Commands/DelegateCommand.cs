@@ -15,24 +15,34 @@ namespace RecipeDB.Commands
 
         public ButtonCommand(Action<object> execute, Predicate<object> canExecute)
         {
-            if (execute == null)
+            if(execute == null)
             {
                 throw new Exception("Cannot Execute Method");
             }
             this.execute = execute;
             this.canExecute = canExecute;
         }
-        public ButtonCommand(Action<object> execute) : this(execute, null)
+        public ButtonCommand(Action<object> execute) : this(execute,null)
         {
 
         }
 
 
-        public event EventHandler CanExecuteChanged;
+        public event EventHandler CanExecuteChanged
+        {
+            add
+            {
+                CommandManager.RequerySuggested += value;
+            }
+            remove
+            {
+                CommandManager.RequerySuggested -= value;
+            }
+        }
 
         public bool CanExecute(object parameter)
         {
-            if (canExecute == null)
+            if(canExecute == null)
             {
                 return true;
             }

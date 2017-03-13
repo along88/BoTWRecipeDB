@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeDB", "RecipeDB\RecipeDB.csproj", "{A4C29930-8E1E-4834-9E71-3D95A9019264}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3953D85F-AED9-49CF-A771-9B38CEA488AC} = {3953D85F-AED9-49CF-A771-9B38CEA488AC}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{3953D85F-AED9-49CF-A771-9B38CEA488AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{A4C29930-8E1E-4834-9E71-3D95A9019264}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4C29930-8E1E-4834-9E71-3D95A9019264}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4C29930-8E1E-4834-9E71-3D95A9019264}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3953D85F-AED9-49CF-A771-9B38CEA488AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3953D85F-AED9-49CF-A771-9B38CEA488AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3953D85F-AED9-49CF-A771-9B38CEA488AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3953D85F-AED9-49CF-A771-9B38CEA488AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

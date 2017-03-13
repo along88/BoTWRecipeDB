@@ -24,7 +24,8 @@ namespace RecipeDB
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new ReturnRecipeViewModel();
+            DataContext = new RecipeViewModel();
+            
         }
     }
 }
