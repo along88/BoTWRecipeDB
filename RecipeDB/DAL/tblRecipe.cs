@@ -18,6 +18,6 @@ namespace DAL
         public string RecipeName { get; set; }
         public string RecipeEffect { get; set; }
         public string RecipeType { get; set; }
-        public string Recipe_Description { get; set; }
+        public string RecipeDescription { get; set; }
     }
 }

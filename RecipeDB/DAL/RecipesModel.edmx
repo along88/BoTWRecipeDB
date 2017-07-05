@@ -18,7 +18,7 @@ warning 6002: The table/view 'Recipes.dbo.tblRecipes' does not have a primary ke
           <Property Name="RecipeName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="RecipeEffect" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="RecipeType" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Recipe Description" Type="varchar" MaxLength="50" />
+          <Property Name="RecipeDescription" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="RecipesModelStoreContainer">
           <EntitySet Name="tblRecipes" EntityType="Self.tblRecipes" store:Type="Tables" store:Schema="dbo">
@@ -27,7 +27,7 @@ warning 6002: The table/view 'Recipes.dbo.tblRecipes' does not have a primary ke
     [tblRecipes].[RecipeName] AS [RecipeName], 
     [tblRecipes].[RecipeEffect] AS [RecipeEffect], 
     [tblRecipes].[RecipeType] AS [RecipeType], 
-    [tblRecipes].[Recipe Description] AS [Recipe Description]
+    [tblRecipes].[RecipeDescription] AS [RecipeDescription]
     FROM [dbo].[tblRecipes] AS [tblRecipes]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
@@ -47,7 +47,7 @@ warning 6002: The table/view 'Recipes.dbo.tblRecipes' does not have a primary ke
           <Property Name="RecipeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="RecipeEffect" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="RecipeType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Recipe_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RecipeDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="RecipesEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tblRecipes" EntityType="Self.tblRecipe" />
@@ -65,7 +65,7 @@ warning 6002: The table/view 'Recipes.dbo.tblRecipes' does not have a primary ke
                 <ScalarProperty Name="RecipeName" ColumnName="RecipeName" />
                 <ScalarProperty Name="RecipeEffect" ColumnName="RecipeEffect" />
                 <ScalarProperty Name="RecipeType" ColumnName="RecipeType" />
-                <ScalarProperty Name="Recipe_Description" ColumnName="Recipe Description" />
+                <ScalarProperty Name="RecipeDescription" ColumnName="RecipeDescription" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

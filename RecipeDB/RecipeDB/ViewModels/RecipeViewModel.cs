@@ -16,35 +16,65 @@ namespace RecipeDB.ViewModels
 {
     class RecipeViewModel : ObservableCollection
     {
-
-      
-
-        public ObservableCollection<RecipeModel> RecipeList { get; private set; }
+        private bool isDish;
+        private bool isElixar;
+        public ObservableCollection<tblRecipe> RecipeList { get; private set; }
         public ButtonCommand SubmitButton { get; private set; }
         public string RecipeName { get; private set; }
         public string RecipeEffect { get; private set; }
+        public string RecipeType { get; private set; }
+        public string RecipeDescription { get; private set; }
+        public bool IsDish
+        {
+            get { return isDish; }
+
+            set
+            {
+                isDish = value;
+                
+                OnPropertyChanged();
+            }
+        }
+        public bool IsElixar
+        {
+            get { return isElixar; }
+
+            set
+            {
+                isElixar = value;
+                
+                OnPropertyChanged();
+            }
+        }
 
         public RecipeViewModel()
         {
 
 
-            RecipeList = new ObservableCollection<RecipeModel>();
-            SubmitButton = new ButtonCommand(SetRecipes);
+            RecipeList = new ObservableCollection<tblRecipe>();
+            SubmitButton = new ButtonCommand(ParameterSelected);
+           
 
 
         }
 
-        private void SetRecipes(object message)
+        private void GetAllRecipes()
         {
-            Repository<RecipesEntities> recipes = new Repository<RecipesEntities>();
-            var recipe = recipes.GetAll();
-            MessageBox.Show(recipe.ToString());
-            
-           
-           
+            Repository<tblRecipe> recipes = new Repository<tblRecipe>();
+            var recipe = recipes.GetAll().ToList();
+            RecipeList.Clear();
+            for (int i = 0; i < recipe.Count; i++)
+            {
+                RecipeList.Add(recipe[i]);
+            }
         }
-       
+        private void ParameterSelected(object message)
+        {
+            if(!isDish)
+                GetAllRecipes();
 
+            
+        }
 
     }
 }

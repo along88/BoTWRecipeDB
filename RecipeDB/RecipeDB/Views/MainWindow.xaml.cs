@@ -27,5 +27,7 @@ namespace RecipeDB
             DataContext = new RecipeViewModel();
             
         }
+
+        
     }
 }

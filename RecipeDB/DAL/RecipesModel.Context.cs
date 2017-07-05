@@ -15,7 +15,8 @@ namespace DAL
     
     public partial class RecipesEntities : DbContext
     {
-        public RecipesEntities() : base("name=RecipesEntities")
+        public RecipesEntities()
+            : base("name=RecipesEntities")
         {
         }
     
